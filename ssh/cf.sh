@@ -8,9 +8,9 @@ clear
 apt install jq curl -y >/dev/null 2>&1
 DOMAIN=gabutvpn.shop
 sub=$(</dev/urandom tr -dc a-x1-9 | head -c5 | tr -d '\r' | tr -d '\r\n')
-SUB_DOMAIN=${sub}.gabutvpn.shop
-CF_ID=paoandest@gmail.com
-CF_KEY=1d158d0efc4eef787222cefff0b6d20981462
+SUB_DOMAIN=${sub}.nyarigratisan.me
+CF_ID=Cindyherdiana22@gmail.com
+CF_KEY=46b97d72525168ff3b58ca53b27ffe02f7bbd
 set -euo pipefail
 IP=$(wget -qO- ifconfig.me/ip);
 echo "Updating DNS for ${SUB_DOMAIN}..."
