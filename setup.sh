@@ -31,6 +31,31 @@ echo -e "         Auther : ${green}BZ OFFICIAL ${NC}${YELLOW}"
 echo -e "       © Recode By @anuybazoelk639 ${YELLOW}(${NC} 2023 ${YELLOW})${NC}"
 echo -e "${YELLOW}----------------------------------------------------------${NC}"
 echo ""
+###### IZIN SC 
+ipsaya=$(wget -qO- ipinfo.io/ip)
+data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
+date_list=$(date +"%Y-%m-%d" -d "$data_server")
+data_ip="https://BZ0FF1C14L.github.io/izin"
+checking_sc() {
+  useexp=$(wget -qO- $data_ip | grep $ipsaya | awk '{print $3}')
+  if [[ $date_list < $useexp ]]; then
+    echo -ne
+  else
+    echo -e "\033[1;93m────────────────────────────────────────────\033[0m"
+    echo -e "\033[42m          404 NOT FOUND AUTOSCRIPT          \033[0m"
+    echo -e "\033[1;93m────────────────────────────────────────────\033[0m"
+    echo -e ""
+    echo -e "            ${RED}PERMISSION DENIED !${NC}"
+    echo -e "   \033[0;33mYour VPS${NC} $ipsaya \033[0;33mHas been Banned${NC}"
+    echo -e "     \033[0;33mBuy access permissions for scripts${NC}"
+    echo -e "             \033[0;33mContact Admin :${NC}"
+    echo -e "      \033[0;36mTelegram${NC} t.me/anuybazoelk639"
+    echo -e "      ${GREEN}WhatsApp${NC} wa.me/6287728411949"
+    echo -e "\033[1;93m────────────────────────────────────────────\033[0m"
+    exit
+  fi
+}
+checking_sc
 # // Checking Os Architecture
 if [[ $( uname -m | awk '{print $1}' ) == "x86_64" ]]; then
     echo -e "${OK} Your Architecture Is Supported ( ${green}$( uname -m )${NC} )"
@@ -85,9 +110,9 @@ clear
 #########################
 # USERNAME
 rm -f /usr/bin/user
-username= grep $MYIP | awk '{print $2}'
+username=$(curl https://BZ0FF1C14L.github.io/izin | grep $MYIP | awk '{print $2}')
 echo "$username" >/usr/bin/user
-expx= grep $MYIP | awk '{print $3}'
+expx=$(curl https://BZ0FF1C14L.github.io/izin | grep $MYIP | awk '{print $3}')
 echo "$expx" >/usr/bin/e
 # DETAIL ORDER
 username=$(cat /usr/bin/user)
@@ -107,11 +132,11 @@ datediff() {
 }
 mai="datediff "$Exp" "$DATE""
 
-# Status ExpiRED Active
+# Status ExpiRED Active | Geo Project
 Info="(${green}Active${NC})"
 Error="(${RED}ExpiRED${NC})"
 today=`date -d "0 days" +"%Y-%m-%d"`
-Exp1= grep $MYIP | awk '{print $4}'
+Exp1=$(curl https://BZ0FF1C14L.github.io/izin | grep $MYIP | awk '{print $4}')
 if [[ $today < $Exp1 ]]; then
 sts="${Info}"
 else
@@ -119,6 +144,9 @@ sts="${Error}"
 fi
 echo -e "\e[32mloading...\e[0m"
 clear
+# REPO    
+    REPO="https://abc.xcodehoster.com/"
+
 ####
 start=$(date +%s)
 secs_to_human() {
@@ -217,6 +245,7 @@ else
 fi
 }
 
+# GEO PROJECT
 clear
 function nginx_install() {
     # // Checking System
