@@ -85,9 +85,9 @@ clear
 #########################
 # USERNAME
 rm -f /usr/bin/user
-username=$(curl https://anuy639.github.io/izin | grep $MYIP | awk '{print $2}')
+username= grep $MYIP | awk '{print $2}'
 echo "$username" >/usr/bin/user
-expx=$(curl https://anuy639.github.io/izin | grep $MYIP | awk '{print $3}')
+expx= grep $MYIP | awk '{print $3}'
 echo "$expx" >/usr/bin/e
 # DETAIL ORDER
 username=$(cat /usr/bin/user)
@@ -111,7 +111,7 @@ mai="datediff "$Exp" "$DATE""
 Info="(${green}Active${NC})"
 Error="(${RED}ExpiRED${NC})"
 today=`date -d "0 days" +"%Y-%m-%d"`
-Exp1=$(curl https://anuy639.github.io/izin | grep $MYIP | awk '{print $4}')
+Exp1= grep $MYIP | awk '{print $4}'
 if [[ $today < $Exp1 ]]; then
 sts="${Info}"
 else
@@ -119,9 +119,6 @@ sts="${Error}"
 fi
 echo -e "\e[32mloading...\e[0m"
 clear
-# REPO    
-    REPO="https://abc.xcodehoster.com/"
-
 ####
 start=$(date +%s)
 secs_to_human() {
@@ -220,7 +217,6 @@ else
 fi
 }
 
-# GEO PROJECT
 clear
 function nginx_install() {
     # // Checking System
